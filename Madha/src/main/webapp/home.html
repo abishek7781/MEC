@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="css\bootstrap.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("input[name='chkScholarship']").click(function () {
+                if ($("#chkYes").is(":checked")) {
+                    $("#fees").removeAttr("disabled");
+                    $("#fees").focus();
+                } 
+                else if($("#chk__Yes").is(":checked")){
+                    $("#fees").removeAttr("disabled");
+                    $("#fees").focus();
+                }
+                else if($("#chk_Yes").is(":checked")){
+                                $("#fees").attr("disabled", "disabled");
+                 }
+                else {
+                $("#fees").attr("disabled", "disabled");
+                }
+            });
+        });
+    </script>
+    <!--<style>
+        body{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            font-weight:500;
+            background-color:whitesmoke;
+            background-repeat: no-repeat;
+        }
+        img{
+            width: 264px;
+            height: 87;
+            box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+        }
+        .box{
+            margin: 10px 0;
+            background-color: whitesmoke;
+            border-radius: 3%;
+            width: 500px;
+            padding: 50px;
+            box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+            transition: 0.5s;
+        }
+        #box{
+                width: 28%;
+                margin-top: -.5cm;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+        }
+        .input-box{
+            width: 6cm;
+            height: .7cm;
+            text-align: center;
+            font-size:0.5cm;
+        }
+        .button{
+            font-weight: bold;
+            width: 4cm;
+            height: .8cm;
+            margin-top: 1cm;
+            cursor: pointer;
+            background-color:white;
+            color: black;
+            border:none;
+            border-radius:10px;
+            box-shadow: 0px 0px 2px 2px rgb(185, 183, 183);
+        }
+        ::placeholder{
+        font-weight:400;
+        }
+       
+        
+        .button:hover{
+            background-color: black;
+            color: white;
+        }
+        .reset{
+            font-weight: bold;
+            width: 4cm;
+            height: .8cm;
+            cursor: pointer;
+            background-color:white;
+            color: black;
+            border:none;
+            border-radius:10px;
+            box-shadow: 0px 0px 2px 2px rgb(185, 183, 183);
+        }
+        .reset:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>-->
+    <style>
+        img{
+            width: 264px;
+            height: 87;
+        }
+        #frm{
+            width: 15cm;
+            margin: auto;
+            margin-top: -5px;
+        }
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background-color: #fff;
+            padding: 25px 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+    </head>
+    <body class="container-fluid">
+        <img src="https://www.madhaengineeringcollege.com/wp-content/uploads/2022/06/hlogo.png">
+        <form action="register" method="post" class="form card" id="frm">
+            <h2 class="card-header text-white">Student Registration Form</h2>
+                <table class="table table-hover">
+                    <tr>
+                        <td>Name</td>
+                        <i class="bi bi-person"></i>
+                        <td><input type="text" name="name" required placeholder="Enter Name"></td>
+                    </tr>
+                    <tr>
+                        <td>Reg No</td>
+                        <td><input type="text" name="reg_no" required placeholder="Enter Reg No"></td>
+                    </tr>
+                    <tr>
+                        <td>Dept</td>
+                        <td><select style="width: 4.9cm;" name="dept" id="dept" required class="dropbox">
+                        <option disabled selected class="input-box">Department</option>
+                        <option value="AERO">AERO</option>
+                        <option value="BIO-MEDICAL">BIO-MEDICAL</option>
+                        <option value="BIO-TECH">BIO-TECH</option>
+                        <option value="CIVIL">CIVIL</option>
+                        <option value="CSBS">CSBS</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="IT">IT</option>
+                        <option value="MECH">MECH</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Year</td>
+                        <td>
+                            <input type="radio" name="year" value="1" required>
+                            <label>I</label>
+                            <input type="radio" name="year" value="2" required>
+                            <label>II</label>
+                            <input type="radio" name="year" value="3" required>
+                            <label>III</label>
+                            <input type="radio" name="year" value="4" required>
+                            <label>IV</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>E-Mail</td>
+                        <td><input type="text" name="email" required placeholder="Enter Email"></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile No</td>
+                        <td><input type="text" name="mobile_no" required placeholder="Enter Mobile"></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            <input type="radio" name="gender" value="Male" required>
+                            <label>Male</label>
+                            <input type="radio" name="gender" value="Female" required>
+                            <label>Female</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Scholarship</td>
+
+                        <td>
+                            <label for="chkYes">
+                            <input type="radio" id="chkYes" value="FG" name="chkScholarship" required>FG</label>
+                            <label for="chkNo">
+                            <input type="radio" id="chkNo" value="PMSS" name="chkScholarship" required>PMSS</label>
+                            <label for="chk_Yes">
+                            <input type="radio" id="chk_Yes" value="7.5" name="chkScholarship" required>7.5</label>
+                            <label for="chk__Yes">
+                            <input type="radio" id="chk__Yes" value="None" name="chkScholarship" required>None</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tution Fees</td>
+                        <td><input type="text" name="fees" id="fees" disabled="disabled" placeholder="Enter Fees" required></td>
+                    </tr>
+                    <tr>
+                        <td>Additional fees</td>
+                        <td>
+                            <label for="chkYes">
+                            <input type="radio" id="chkYes" value="HOSTEL_FEES" name="chkAdditionalfees">Hostel Fees</label>
+                            <label for="chkYes">
+                            <input type="radio" id="chkYes" value="TRANSPORT_FEES" name="chkAdditionalfees">Transport Fees</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fees</td>
+                        <td><input type="text" name="add_fees" id="fees" placeholder="Enter Fees" ></td>
+                    </tr>
+                    <tr class="card-footer">
+                        <td><button type="reset" class="btn" id="btn1">RESET</button></td>
+                        <td><button type="submit" class="btn" id="btn2">SUBMIT</button></td>
+                    </tr>
+            </table>
+        </form>
+    </body>
+</html>
