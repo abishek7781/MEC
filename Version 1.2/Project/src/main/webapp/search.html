@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Madha</title><br>
+        <style>
+            
+            .textfield{
+                text-shadow: 2px 2px 2px lightcyan;
+                width: 8cm;
+                height: 1cm;
+                border-radius: 5px;
+                text-align: center;
+                font-weight:6;
+                background-color:whitesmoke;
+                color: black;
+            }
+            .form{
+                text-align: center;
+                padding: 20%;
+            }
+            .input{
+                width: 8cm;
+                height: 1cm;
+                border-radius: 5px;
+                text-align: center;
+                font-weight:600;
+                background-color:whitesmoke;
+                color: black;
+            }
+            body{
+                background-image: url("https://img.freepik.com/premium-vector/white-color-technology-abstract-background-vector-illustration-modern-design-concept_29865-4088.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100%;
+
+            }
+            button{
+                height: 1cm;
+                width: 3cm;
+                border-radius: 100px;
+                background-color: white;
+                cursor: pointer;
+                font-weight: 600;
+            }
+            button:hover{
+                background-color: black;
+                color: white;
+            }
+            img{
+                width: 264px;
+                height: 87;
+                margin-top: -15cm;
+              
+            }
+            ::placeholder{
+                color: black;
+            }
+            h1 {
+  text-shadow: 2px 2px 2px lightcyan;
+}
+.ulabel {
+  color: black;
+  padding: 10px;
+}
+.slabel {
+  color: black;
+  padding: 10px;
+}
+.form{
+border-radius: 20px;
+  text-align: center;
+  background-color: white;
+  width: 600px;
+  border: 3px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  padding: 30px;
+
+
+}
+
+        </style>
+
+        
+    </head>
+    <body>
+            <center><h1 style="font-size:40px;">Update Student Fees Details</h1></center>
+       <img src="https://www.madhaengineeringcollege.com/wp-content/uploads/2022/06/hlogo.png">
+        <div class="form">
+        <form action="search" method="post">
+                  <label  class="ulabel"style="font-size: 22px;" >UID NO:</label>
+            
+            
+                <input  class="textfield" name="reg_no4"  type="number" placeholder="Enter UID_NO" required><br><br>
+                <label   class="slabel"style="font-size: 22px;">Student Year :</label>
+                <input type="radio" id="I year" name="fees_year" value=1 required >
+             <label for="I year">I year</label>
+                <input type="radio" id="II year" name="fees_year" value=2>
+             <label for="I year">II year</label>
+                <input type="radio" id="III year" name="fees_year" value=3>
+                <label for="I year">III year</label>
+                <input type="radio" id="IV year" name="fees_year" value=4>
+            <label for="I year">IV year</label><br><br>
+      
+                 
+                                 <button>SUBMIT</button> 
+                
+         
+            
+        
+        </form>
+        </div>
+    </body>
+</html>

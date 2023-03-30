@@ -1,0 +1,73 @@
+         table {
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 20px;
+          border-collapse: collapse;
+          border-radius: 2%;
+          width: 70%;
+          text-align: center;
+          padding-left: 20%;
+        }
+        @media print {
+        #printpagebutton{
+        display: none;
+        }}
+        img{
+            width: 264px;
+            height: 87;
+        }
+        td, th {
+          border: 1px solid black;
+          text-align: left;
+          padding: 1%;
+          text-align: auto;
+          font-size: 20px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+          text-align: center;
+          padding-left: 80%;
+        }
+        div{
+            text-align: center;
+            margin-top: 5%;
+            padding-bottom: 80%;
+            margin-left: 100px;
+        }
+        .l{
+            width: 90%;
+        }
+        .m
+        {
+            width: 50;
+            margin-left: 10%;
+            margin-top: -3%;
+        }
+        .n{
+            width: 48;
+            margin-left: 10%;
+            margin-top: -7%;
+            
+        }
+        .o{
+            text-align: center;
+            margin-top: -7%;
+            font-size: 50px;
+        }
+        .p{
+            width: 21%;
+        }
+        .a{
+            width: 48;
+            margin-left: 10%;
+            margin-top: -5%;
+        }
+    .button {
+    float: right;
+    margin-right: 8cm;
+    height: 1cm;
+    width: 3cm;
+    cursor: pointer;
+    margin-top: 4.5cm;
+}
+       
