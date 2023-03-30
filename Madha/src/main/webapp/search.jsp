@@ -183,7 +183,7 @@
                     <br>
                 <div>
                     <label>Payment Date: </label>
-                    <input type="date" name="date" value="" required class="input-box">
+                    <input type="datetime-local" name="date" value="" required class="input-box">
                     <br>
                     <label>Enter Amount: </label>
                     <input type="text" name="amount" placeholder="Enter Amount" required class="input-box">

@@ -88,6 +88,8 @@
         <a href="home.html"><button href="E:\projects\Madha\webapp\reg.html">REGISTER</button><br><br></a>
         <a href="showdata.html"><button href="#recipts">ENQUIRY</button><br><br></a>
         <a href="search.html"><button href="#payment">PAYMENT</button></a>
+        <a href="authorizer"><button href="#payment">Authorize</button></a>
+        
         </div>
     </body>
 </html>

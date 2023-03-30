@@ -24,8 +24,8 @@ public class showusers extends HttpServlet{
 	String username = "root";
 	String password ="Time1234";
 	String query="select * from student_details where reg_no=?";
-	String query2="select * from fees_details where(reg_no=?&&fees_year=?)";
-	String query3="select pending_fees,paid_fees,additional_fees_pending,additional_fees_paid from fees_details where(reg_no=?&&fees_year=?)";
+	String query2="select * from fees_details1 where(reg_no=?&&fees_year=?)";
+	String query3="select pending_fees,paid_fees,additional_fees_pending,additional_fees_paid from fees_details1 where(reg_no=?&&fees_year=?)";
 	int fees_typeint;
 	String fees_typeString;
 

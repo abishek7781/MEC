@@ -25,6 +25,8 @@ public class updateonfeesdetails extends HttpServlet{
 	int i;
 	int count;
 	private final static String query = "insert into fees_details(reg_no,pending_fees,paid_fees,additional_fees_paid,additional_fees_pending,fees_year) values(?,?,?,?,?,?)";
+	private final static String query1 = "insert into fees_details1(reg_no,pending_fees,paid_fees,additional_fees_paid,additional_fees_pending,fees_year) values(?,?,?,?,?,?)";
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String reg_no=req.getParameter("reg_no");
@@ -44,7 +46,8 @@ public class updateonfeesdetails extends HttpServlet{
 		}
 	    try (
 	    	    Connection con = DriverManager.getConnection(url,username,password);
-				PreparedStatement ps=con.prepareStatement(query);){
+				PreparedStatement ps=con.prepareStatement(query);
+	    		PreparedStatement ps1=con.prepareStatement(query1);){
 	    	ps.setString(1, reg_no);
 	    	ps.setString(2, fees);
 	    	ps.setString(3, "00");
@@ -53,6 +56,16 @@ public class updateonfeesdetails extends HttpServlet{
 	    	for (int i = 1; i < 5; i++) {
 	    		ps.setString(6,Integer.toString(i));
 	    		count=  ps.executeUpdate();
+				
+			}
+	    	ps1.setString(1, reg_no);
+	    	ps1.setString(2, fees);
+	    	ps1.setString(3, "00");
+	    	ps1.setString(4, "00");
+	    	ps1.setString(5, additional_fees);
+	    	for (int i = 1; i < 5; i++) {
+	    		ps1.setString(6,Integer.toString(i));
+	    		count=  ps1.executeUpdate();
 				
 			}
 	    	

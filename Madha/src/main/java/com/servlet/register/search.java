@@ -24,7 +24,7 @@ public class search extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
     String search_query = "select * from student_details where reg_no=?";
-    String pending_fees_queryString = "select * from fees_details where(reg_no=?&&fees_year=?)";
+    String pending_fees_queryString = "select * from fees_details1 where(reg_no=?&&fees_year=?)";
     String nameString;
     String reg_noString;
     String deptString;
