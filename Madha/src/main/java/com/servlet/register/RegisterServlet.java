@@ -1,10 +1,11 @@
-package com.servlet.register;
+	package com.servlet.register;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.catalina.connector.Response;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
@@ -23,8 +26,11 @@ public class RegisterServlet extends HttpServlet {
 	String url = "jdbc:mysql://127.0.0.1:3306/student";
 	String username = "root";
 	String password ="Time1234";
-	private final static String query = "insert into student_details(name,reg_no,dept,year,email,mobile_no,gender,fees,additional_fees,additional_fees_type,scholorship_type) values(?,?,?,?,?,?,?,?,?,?,?)";
-    @Override
+	private final static String query = "insert into student_details(name,reg_no,dept,year,email,mobile_no,gender,additional_fees_type,fees,additional_fees,scholorship_type) values(?,?,?,?,?,?,?,?,?,?,?)";
+	private final static String query1 = "select * from fixed_fees where(batch=?&&dept=?)";
+	String hostel_fees,transport_fees,additional_fees_type_string;
+	int tution_fees;
+	@Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         //get PrintWriter
         PrintWriter pw = res.getWriter();
@@ -38,14 +44,39 @@ public class RegisterServlet extends HttpServlet {
         String dept = req.getParameter("dept");
         String email = req.getParameter("email");
         String mobile_no = req.getParameter("mobile_no");
-        String additional_fees = req.getParameter("add_fees");
-        String additional_fees_type = req.getParameter("chkAdditionalfees");
+        String additional_fees;
+        String anString = req.getParameter("chkAdditionalfees");
+        System.out.println(anString);
+        int additional_fees_type = Integer.parseInt( req.getParameter("chkAdditionalfees"));
+        if(additional_fees_type==1) {
+        	additional_fees_type_string = "Hostel_fees";
+        }
+        else {
+        	additional_fees_type_string = "Transport_fees";
+        }
         System.out.println(mobile_no);
         String year = req.getParameter("year");
         String gender = req.getParameter("gender");
-        String fees = req.getParameter("fees"); 
-        String scholorship_type =req.getParameter("chkScholarship");
+        String scholorship_type;
+        int scholorship_type1 = Integer.parseInt(req.getParameter("chkScholarship"));
+        if(scholorship_type1==1) {
+        	scholorship_type="FG";
+        }
+        else if(scholorship_type1==2) {
+        	scholorship_type="PMMS";
+        }
+        else if(scholorship_type1==3) {
+        	scholorship_type="7.5";
+        }
+        else {
+        	scholorship_type="None";
+        }
+       
+        //String scholorship_type =  req.getParameter("chkScholarship");
+        String batch = req.getParameter("batch");
+       
         
+       
         //load the JDBC driver
        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -56,7 +87,8 @@ public class RegisterServlet extends HttpServlet {
         //generate the connection
        System.out.println("Working..");
         try(Connection con = DriverManager.getConnection(url,username,password);
-                PreparedStatement ps = con.prepareStatement(query);){
+                PreparedStatement ps = con.prepareStatement(query);
+        		PreparedStatement ps1 = con.prepareStatement(query1);){
             //set the values
             ps.setString(1, name);
             ps.setString(2, reg_no);
@@ -65,19 +97,42 @@ public class RegisterServlet extends HttpServlet {
             ps.setString(5, email);
             ps.setString(6, mobile_no);
             ps.setString(7, gender);
-            ps.setString(8, fees);
-            ps.setString(9, additional_fees);
-            ps.setString(10, additional_fees_type);
+            ps.setString(8, additional_fees_type_string);
             ps.setString(11, scholorship_type);
-
+            ps1.setString(1, batch);
+            ps1.setString(2, dept);
+            ResultSet rs =  ps1.executeQuery();
+            if(rs.next()) {
+            tution_fees = Integer.parseInt( rs.getString(2));
+            hostel_fees = rs.getString(3);
+            transport_fees = rs.getString(4);
+            }
+            if(scholorship_type1==1) {
+            	tution_fees-=25000;
+            }
+            else if (scholorship_type1==2) {
+				tution_fees-=50000;
+				
+			}
+            else if (scholorship_type1==3) {
+				tution_fees=00;
+			}
+            	ps.setInt(9, tution_fees);	
             
-
-            
-
-            //execute the query
-            int count = ps.executeUpdate();
+            if(additional_fees_type==1) {
+            	additional_fees=hostel_fees;
+            	ps.setString(10, additional_fees);
+            }
+            else {
+            	additional_fees=transport_fees;
+            	ps.setString(10, additional_fees);
+            }
+            int count  = ps.executeUpdate();
+            req.setAttribute("fees1", tution_fees);
+            req.setAttribute("add_fees1", additional_fees);
            RequestDispatcher dispatcher = req.getRequestDispatcher("updateonfeesdetails");
-            System.out.println("Working111..");
+           
+
 
            dispatcher.forward( req, res );
             

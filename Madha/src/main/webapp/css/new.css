@@ -62,12 +62,12 @@
             margin-left: 10%;
             margin-top: -5%;
         }
-        .button{
-        float:right;
-        margin-right:5cm;
-        height:1cm;
-        width:3cm;
-        cursor:pointer;
-        margin-top:1cm;
-        }
-    
+    .button {
+    float: right;
+    margin-right: 8cm;
+    height: 1cm;
+    width: 3cm;
+    cursor: pointer;
+    margin-top: 4.5cm;
+}
+       

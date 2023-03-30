@@ -5,26 +5,7 @@
     <title>Registration Page</title>
     <link rel="stylesheet" href="css\bootstrap.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $("input[name='chkScholarship']").click(function () {
-                if ($("#chkYes").is(":checked")) {
-                    $("#fees").removeAttr("disabled");
-                    $("#fees").focus();
-                } 
-                else if($("#chk__Yes").is(":checked")){
-                    $("#fees").removeAttr("disabled");
-                    $("#fees").focus();
-                }
-                else if($("#chk_Yes").is(":checked")){
-                                $("#fees").attr("disabled", "disabled");
-                 }
-                else {
-                $("#fees").attr("disabled", "disabled");
-                }
-            });
-        });
-    </script>
+    
     <!--<style>
         body{
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -172,6 +153,10 @@
                         <td><input type="text" name="mobile_no" required placeholder="Enter Mobile"></td>
                     </tr>
                     <tr>
+                        <td>Batch</td>
+                        <td><input type="text" name="batch" required placeholder="Enter Batch"></td>
+                    </tr>
+                    <tr>
                         <td>Gender</td>
                         <td>
                             <input type="radio" name="gender" value="Male" required>
@@ -185,32 +170,26 @@
 
                         <td>
                             <label for="chkYes">
-                            <input type="radio" id="chkYes" value="FG" name="chkScholarship" required>FG</label>
+                            <input type="radio" id="chkYes" value=1 name="chkScholarship" required>FG</label>
                             <label for="chkNo">
-                            <input type="radio" id="chkNo" value="PMSS" name="chkScholarship" required>PMSS</label>
+                            <input type="radio" id="chkNo" value=2 name="chkScholarship" required>PMSS</label>
                             <label for="chk_Yes">
-                            <input type="radio" id="chk_Yes" value="7.5" name="chkScholarship" required>7.5</label>
+                            <input type="radio" id="chk_Yes" value=3 name="chkScholarship" required>7.5</label>
                             <label for="chk__Yes">
-                            <input type="radio" id="chk__Yes" value="None" name="chkScholarship" required>None</label>
+                            <input type="radio" id="chk__Yes" value=4 name="chkScholarship" required>None</label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Tution Fees</td>
-                        <td><input type="text" name="fees" id="fees" disabled="disabled" placeholder="Enter Fees" required></td>
-                    </tr>
+                   
                     <tr>
                         <td>Additional fees</td>
                         <td>
                             <label for="chkYes">
-                            <input type="radio" id="chkYes" value="HOSTEL_FEES" name="chkAdditionalfees">Hostel Fees</label>
+                            <input type="radio" id="chkYes" value=1 name="chkAdditionalfees">Hostel Fees</label>
                             <label for="chkYes">
-                            <input type="radio" id="chkYes" value="TRANSPORT_FEES" name="chkAdditionalfees">Transport Fees</label>
+                            <input type="radio" id="chkYes" value=2 name="chkAdditionalfees">Transport Fees</label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Fees</td>
-                        <td><input type="text" name="add_fees" id="fees" placeholder="Enter Fees" ></td>
-                    </tr>
+                    
                     <tr class="card-footer">
                         <td><button type="reset" class="btn" id="btn1">RESET</button></td>
                         <td><button type="submit" class="btn" id="btn2">SUBMIT</button></td>

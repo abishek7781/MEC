@@ -63,8 +63,6 @@ PreparedStatement ps2=con.prepareStatement(query3);) {
 			pw.println("<div style='margin:auto;width:900px;margin-top:100px;'>");
 			pw.println("<img src=\"https://www.madhaengineeringcollege.com/wp-content/uploads/2022/06/hlogo.png\">");
 			pw.println("<input type=\"button\" class=\"button\" id=\"printpagebutton\" value=\"Fees Receipt\" onclick=\"window.print()\">");
-			pw.println("<br>");
-		    pw.println("<a href='index.jsp'><button class='button' id=\"printpagebutton\">Home</button></a>");
             pw.println("<div>");
 
 			pw.println("<table class=\"table\">");

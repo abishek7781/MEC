@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>search page</title>
+            <link rel="stylesheet" href="css\bootstrap.css">
+        
         <style>
         .form .td{
         	display:auto;
@@ -107,7 +109,9 @@
         <img src="https://www.madhaengineeringcollege.com/wp-content/uploads/2022/06/hlogo.png">
         <div class="form">
         <form action="search1" method="post">
-            <table class="table">      
+                    <h2 class="card-header text-white">Update Student Fees</h2>
+        
+            <table class="table table-hover">      
                 <tr>
                     <td class="l">Name</td>
                     <td class="l">${Name}</td>
@@ -177,7 +181,7 @@
                     <input type="radio" name="fees" value=4 required>
                     <label>MISC fees</label>
                     <br>
-                <div class="b-val">
+                <div>
                     <label>Payment Date: </label>
                     <input type="date" name="date" value="" required class="input-box">
                     <br>

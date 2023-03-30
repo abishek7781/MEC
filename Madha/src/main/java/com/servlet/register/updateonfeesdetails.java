@@ -28,14 +28,14 @@ public class updateonfeesdetails extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String reg_no=req.getParameter("reg_no");
-		String fees=req.getParameter("fees");
-		String additional_fees=req.getParameter("add_fees");
+		String fees= String.valueOf(req.getAttribute("fees1")) ;
+		String additional_fees=(String) req.getAttribute("add_fees1");
 		String fees_year=req.getParameter("fees_year");
 		
 		
 		PrintWriter pw=resp.getWriter();
 		resp.setContentType("text/html");
-	    pw.println("<link rel='stylesheet' href='css/bootstrap.css'></link>");
+	    pw.println("<link rel='stylesheet' href='css/new.css'></link>");
 	    try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
@@ -67,7 +67,7 @@ public class updateonfeesdetails extends HttpServlet{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    pw.println("<a href='index.jsp'><button class='btn btn-outline-success'>'Home'</button></a>");
+	    pw.println("<a href='index.jsp'><button class='btn btn-outline-success'>Home</button></a>");
         pw.println("</div>");
         //close the stram
         pw.close();
