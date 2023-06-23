@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/higher_page.css">
+        <title></title>
+        <style>
+            img{
+				width: 264px;
+				height: 87;
+			}
+			#frm{
+				width: 13cm;
+				margin: auto;
+				margin-top: 50px;
+			}
+			.container {
+				max-width: 700px;
+				width: 100%;
+				background-color: #fff;
+				padding: 25px 30px;
+				border-radius: 5px;
+				box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+			}
+			h2{
+				text-align: center;
+			}
+        </style>
+    </head>
+    <body class="container-fluid">
+        <img src="https://www.madhaengineeringcollege.com/wp-content/uploads/2022/06/hlogo.png">
+            <form action="higherpage" method="post" class="form card" id="frm">
+                <h2 class="card-header text-white">Higher Official</h2>
+                    <table class="table table-hover">
+                        <tr>
+                            <td>Dept</td>
+                            <td><select style="width: 4.9cm;" name="dept" id="dept" required class="dropbox">
+                            <option disabled selected class="input-box">Department</option>
+                            <option value="AERO">AERO</option>
+                            <option value="BIO-MEDICAL">BIO-MEDICAL</option>
+                            <option value="BIO-TECH">BIO-TECH</option>
+                            <option value="CIVIL">CIVIL</option>
+                            <option value="CSBS">CSBS</option>
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="IT">IT</option>
+                            <option value="MECH">MECH</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>Year</td>
+                            <td><select style="width: 4.9cm;" name="year" id="dept" required class="dropbox">
+                            <option disabled selected class="input-box">Select Year</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                            </select></td>
+                        </tr>
+                        <tr class="card-footer">
+                            <td><button type="reset" class="btn" id="btn1">RESET</button></td>
+                            <td><button type="submit" class="btn" id="btn2">SUBMIT</button></td>
+                        </tr>
+                    </table>
+            </form>
+    </body>
+</html>

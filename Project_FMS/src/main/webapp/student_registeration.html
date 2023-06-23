@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/student_register.css">
+		<meta charset="ISO-8859-1">
+		<title>Registration</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>    
+
+		<script>
+			const form = document.getElementById("frm");
+			const password = form.password;
+			const confirmPassword = form.confirmPassword;
+			const feedback = document.getElementById("confirmPassword-feedback");
+			let isPasswordMatch = false;
+	  
+			confirmPassword.addEventListener("input", () => {
+			  if (password.value != confirmPassword.value) {
+				feedback.innerHTML = "Password did not match.";
+				isPasswordMatch = false;
+			  } else {
+				feedback.innerHTML = "";
+				isPasswordMatch = true;
+			  }
+			});
+	  
+			form.onsubmit = function () {
+			  if (isPasswordMatch) {
+				alert("Form submitted. Great!");
+				return true;
+			  }
+			  alert("Wait! Password did not match.");
+			  return false;
+			};
+		</script>
+		<style>
+			img{
+				width: 264px;
+				height: 87;
+			}
+			#frm{
+				width: 13cm;
+				margin: auto;
+				margin-top: 50px;
+			}
+			.container {
+				max-width: 700px;
+				width: 100%;
+				background-color: #fff;
+				padding: 25px 30px;
+				border-radius: 5px;
+				box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+			}
+			h2{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body class="container-fluid">
+		<img src="https://www.madhaengineeringcollege.com/wp-content/uploads/2022/06/hlogo.png">
+			<form action="student_register" method="post" class="form card" id="frm" onSubmit="return checkPassword(this)">
+				<h2 class="card-header text-white">New User Registration</h2>
+				<table class="table table-hover">
+					<tr>
+                        <td>Name</td>
+                        <td><input type="text" name="name" placeholder="Enter Name" required></td>
+                    </tr>
+                    <tr>
+                        <td>Reg No</td>
+                        <td><input type="text" name="reg_no" placeholder="Enter Reg No" required></td>
+                    </tr>
+					<tr>
+                        <td>E-Mail</td>
+                        <td><input type="text" name="email" placeholder="Enter Email" required></td>
+                    </tr>
+                    <tr>
+						<td for="password">Password</td>
+						<td><input type="password" name="password" id="password" placeholder="Enter Password" required></td>
+					</tr>
+					<tr>
+						<td for="confirm-password">Confirm Password</td>
+						<td><input type="password" name="confirm-password" id="confirm-password" placeholder="Re-Enter Password" required></td>
+					</tr>
+					<tr class="card-footer">
+						<td><button type="reset" class="btn" id="btn1">RESET</button></td>
+						<td><button type="submit" class="btn" id="btn2">REGISTER</button></td>
+					</tr>
+				</table>
+			</form>
+	</body>
+</html>

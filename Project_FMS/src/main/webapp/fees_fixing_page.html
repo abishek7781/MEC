@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html><head>
+        <title>Fees Fixing Page</title>
+        <link rel="stylesheet" href="css\fees_fixing_page.css">
+        <style>
+        img{
+            width: 264px;
+            height: 87;
+        }
+        #frm{
+            width: 13cm;
+            margin: auto;
+            margin-top: 4cm;
+        }
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background-color: #fff;
+            padding: 25px 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+    </head>
+    <body class="container-fluid">
+        <img src="https://www.madhaengineeringcollege.com/wp-content/uploads/2022/06/hlogo.png">
+        <form action="feesfix" method="post" class="form card" id="frm">
+        	<h2 class="card-header text-white">Fees Fixing Form</h2>
+            <table class="table table-hover">
+                <tr>
+                    <td>BATCH</td>
+                    <td><input type="text" name="batch" placeholder="Enter your Batch" required></td>
+                </tr>
+                <tr>
+                    <td>DEPT</td>
+                    <td><select style="width: 4.9cm;" name="dept" id="dept" class="dropbox" required>
+                        <option disabled="" selected="" class="input-box">Department</option>
+                        <option value="AERO">AERO</option>
+                        <option value="BIO-MEDICAL">BIO-MEDICAL</option>
+                        <option value="BIO-TECH">BIO-TECH</option>
+                        <option value="CIVIL">CIVIL</option>
+                        <option value="CSBS">CSBS</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="IT">IT</option>
+                        <option value="MECH">MECH</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>TUTION FEES</td>
+                    <td><input type="text" name="tution_fees" placeholder="Enter fees" required></td>
+                </tr>
+                <tr>
+                    <td>TRANSPORT FEES</td>
+                    <td><input type="text" name="transport_fees" placeholder="Enter fees" required></td>
+                </tr>
+                <tr>
+                    <td>HOSTEL FEES</td>
+                    <td><input type="text" name="hostel_fees" placeholder="Enter fees" required></td>
+                </tr>
+             </table>
+             <div class="card-footer" id="card_bottom">
+                <button type="reset" class="btn" id="btn3">RESET</button>
+                <button type="submit" class="btn" id="btn2">SUBMIT</button>
+                <div id="but" id="btn3">
+                   <a href="login.jsp">HOME</a>
+                   </div>
+                   <br>
+                <a href="fees_designation" class="btn" id="btn4" href="#payment">Designated Fees</a>
+                   
+             </div>
+         </form>
+    
+	</body>
+</html>
